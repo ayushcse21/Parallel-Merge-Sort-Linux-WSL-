@@ -1,19 +1,13 @@
 # Parallel-Merge-Sort-Linux-WSL-
 Implemented and benchmarked parallel Merge Sort on Linux to analyze real multi-core performance and scalability.
 
-Overview
+# Overview
 
 This project implements and analyzes a parallel version of Merge Sort to demonstrate how multi-core processors can be used to improve performance for large datasets. Merge sort naturally follows a divide-and-conquer strategy, making it well-suited for parallel execution.
 
 The project focuses on practical performance analysis rather than theoretical speedup, highlighting how operating system behavior and process management affect real-world parallel execution.
 
-Motivation
-
-Modern CPUs provide multiple cores, but traditional serial algorithms cannot fully utilize this hardware. Parallel merge sort allows independent subproblems to be executed simultaneously, reducing overall execution time for large inputs.
-
-During development, it was observed that Windows multiprocessing introduces significant overhead due to its process-spawning model. To achieve true parallelism and realistic scalability, the implementation was executed on Linux using WSL, which supports efficient fork-based multiprocessing.
-
-Approach
+# Approach
 
 The algorithm works as follows:
 
@@ -27,7 +21,7 @@ Once both halves are sorted, they are merged to produce the final sorted output.
 
 This recursive parallel strategy allows the algorithm to efficiently scale with the number of available CPU cores.
 
-Implementation Details
+# Implementation Details
 
 Language: Python
 
@@ -43,7 +37,7 @@ The implementation was benchmarked on large datasets (up to hundreds of thousand
 
 Execution-time data is collected and visualized using plots, and results are exported in CSV format for further analysis.
 
-Key Learnings
+# Key Learnings
 
 Parallel algorithms must be designed with OS-level behavior in mind.
 
@@ -53,6 +47,6 @@ Process creation overhead can negate parallel benefits if not carefully managed.
 
 Threshold-based optimizations are essential for efficient parallel recursion.
 
-Conclusion
+# Conclusion
 
 This project demonstrates how parallel merge sort can significantly improve sorting performance on multi-core systems when implemented and executed in an appropriate environment. It provides hands-on insight into parallel computing, process management, and performance optimization on real hardware.
